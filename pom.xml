@@ -21,7 +21,7 @@
   	<modules>
   		<module>nifi-pmml-api</module>
   		<module>nifi-pmml</module>
-  		<module>nif-pmml-api-nar</module>
+  		<module>nifi-pmml-api-nar</module>
   		<module>nifi-pmml-nar</module>
   	</modules>
 
