@@ -8,6 +8,7 @@
   	</parent>
   	
   	<artifactId>nifi-pmml-api</artifactId>
+  	<version>1.0.0-SNAPSHOT</version>
   	<packaging>jar</packaging>
 	
 	<properties>
@@ -31,6 +32,8 @@
 			<groupId>org.jpmml</groupId>
 			<artifactId>pmml-evaluator-extension</artifactId>
 			<version>${jpmml.version}</version>
-		</dependency>	    
+		</dependency>
+		<!-- JPMML -->   
+		 
 </dependencies>
 </project>
