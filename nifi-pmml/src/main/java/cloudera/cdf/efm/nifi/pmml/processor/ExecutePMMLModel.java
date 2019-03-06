@@ -59,9 +59,9 @@ public class ExecutePMMLModel extends AbstractProcessor {
     
     // relationships
     public static final Relationship REL_SUCCESS = new Relationship.Builder()
-            .description("All successful FlowFiles are routed to this relationship").name("success").build();
+            .description("On successful execution of model, flow files are routed to this relationship").name("success").build();
     public static final Relationship REL_FAIL = new Relationship.Builder()
-            .description("A failure to in executing PMML Model will route the FlowFile here.").name("set state fail").build();
+            .description("A failure in executing the PMML Model will route the FlowFile to this relationship.").name("failure").build();
         
     
     @Override
@@ -112,6 +112,7 @@ public class ExecutePMMLModel extends AbstractProcessor {
 			if(StringUtils.isEmpty(rawValue)) {
 				getLogger().error("Flow File attribute["+ inputName.getValue() + "] is required for PMML Model Input[ "+ inputField + " ]");
 				session.transfer(flowFile, REL_FAIL);
+				return;
 			}
 			
 			// Transforming an arbitrary user-supplied value to a known-good PMML value

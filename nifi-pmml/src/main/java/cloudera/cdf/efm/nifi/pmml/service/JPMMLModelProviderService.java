@@ -28,6 +28,7 @@ public class JPMMLModelProviderService extends AbstractControllerService impleme
         .name("PMML Model")
         .description("PMML Content for the Predictive Model")
         .required(true)
+        .addValidator(StandardValidators.NON_EMPTY_VALIDATOR)
         .build();
 
     private static final List<PropertyDescriptor> properties;
